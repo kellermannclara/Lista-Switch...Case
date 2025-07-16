@@ -13,9 +13,71 @@
 
     //ENTRADA
 
+    const telefone = prompt("Telefonou para a vítima? (`S`para sim e `N` para não)");
+    const local = prompt("Esteve no local do crime?");
+    const moraPerto = prompt("Mora perto da vítima?");
+    const pobreza = prompt("Devia para a vítima?");
+    const colegunhas = prompt("Já trabalhou com a vítima?");
     
     //PROCESSAMENTO
 
+    let pontos = 0;
+
+    switch (telefone) {
+        case `S`:
+            pontos = pontos + 1;
+            break;
+        case `N`: 
+            pontos = pontos + 0;
+            break;
+        default : 
+            alert(`Mensagem Iválida`);
+            break;
+    }
+    switch (local) {
+        case `S`:
+            pontos = pontos + 1;
+            break;
+        case `N`: 
+            pontos = pontos + 0;
+            break;
+        default : 
+            alert(`Mensagem Iválida`);
+            break;
+    }
+    switch (moraPerto) {
+        case `S`:
+            pontos = pontos + 1;
+            break;
+        case `N`: 
+            pontos = pontos + 0;
+            break;
+        default : 
+            alert(`Mensagem Iválida`);
+            break;
+    }
+    switch (pobreza) {
+        case `S`:
+            pontos = pontos + 1;
+            break;
+        case `N`: 
+            pontos = pontos + 0;
+            break;
+        default : 
+            alert(`Mensagem Iválida`);
+            break;
+    }
+    switch (colegunhas) {
+        case `S`:
+            pontos = pontos + 1;
+            break;
+        case `N`: 
+            pontos = pontos + 0;
+            break;
+        default : 
+            alert(`Mensagem Iválida`);
+            break;
+    }
 
     //SAÍDA
 

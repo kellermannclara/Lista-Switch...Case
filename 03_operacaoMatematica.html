@@ -16,8 +16,58 @@
 
     //PROCESSAMENTO
 
-    switch
+    let conta;
+    let mensagem = (`O resultado é da sua operação é `);
+
+    switch (operacao) {
+        case `multiplicação` :
+            conta = numeroUm * numeroDois;
+            mensagem = mensagem + conta;
+            break;
+        case `divisão`:
+            conta = numeroUm / numeroDois;
+            mensagem = mensagem + conta;
+            break;
+        case `adição` : 
+            conta = numeroUm + numeroDois;
+            mensagem = mensagem + conta;
+            break;
+        case `subtração` : 
+            conta = numeroUm - numeroDois;
+            mensagem = mensagem + conta;
+            break;
+        default : 
+            alert(`Valor Invalido`);
+            break;
+    }
+    let validarPar = conta % 2;
+    switch (validarPar) {
+        case 0 :
+            mensagem = mensagem + `, é par, `;
+            break;
+        default :
+            mensagem = mensagem + `, é impar, `;
+            break;
+    }
+    switch (conta >= 0) {
+        case true :
+            mensagem = mensagem + `é positivo `;
+            break;
+        case false : 
+            mensagem = mensagem + `é negativo `;
+            break;
+    }
+    switch (Number.isInteger(conta)) {
+        case true : 
+            mensagem = mensagem + `e inteiro.`;
+            break;
+        case false : 
+            mensagem = mensagem + `e decimal.`;
+            break;
+    }
     
     //SAÍDA
+
+    alert(mensagem);
 
 </script>
