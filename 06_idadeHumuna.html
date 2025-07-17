@@ -11,7 +11,7 @@
 
     // ENTRADA
 
-    const porteCao = Number(prompt(`Informe o porte do seu cão`));
+    const porteCao = prompt(`Informe o porte do seu cão`);
     const idade = Number(prompt(`Informe a idade do seu cachorro`));
     
     // PROCESSAMENTO
@@ -28,9 +28,10 @@
             fator = 7;
             break;
         default : 
-            alert(`Valor Inválido`);
+            alert(`Porte Inválido.`);
+            break;
     }
-    let calculo = (idade * fator);
+    let calculo = idade * fator;
     
     // SAÍDA
 

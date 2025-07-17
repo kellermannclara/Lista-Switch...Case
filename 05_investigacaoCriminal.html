@@ -13,71 +13,40 @@
 
     //ENTRADA
 
-    const telefone = prompt("Telefonou para a vítima? (`S`para sim e `N` para não)");
-    const local = prompt("Esteve no local do crime?");
-    const moraPerto = prompt("Mora perto da vítima?");
-    const pobreza = prompt("Devia para a vítima?");
-    const colegunhas = prompt("Já trabalhou com a vítima?");
+    const telefone = Number(prompt("Telefonou para a vítima? (0-Não | 1-Sim)"));
+    const local = Number(prompt("Esteve no local do crime? (0-Não | 1-Sim)"));
+    const moraPerto = Number(prompt("Mora perto da vítima? (0-Não | 1-Sim)"));
+    const pobreza = Number(prompt("Devia para a vítima? (0-Não | 1-Sim)"));
+    const colegunhas = Number(prompt("Já trabalhou com a vítima? (0-Não | 1-Sim)"));
     
     //PROCESSAMENTO
 
-    let pontos = 0;
+    let pontos = telefone + local + moraPerto + pobreza + colegunhas;
+    let classifi;
 
-    switch (telefone) {
-        case `S`:
-            pontos = pontos + 1;
+    switch (pontos) {
+        case 2 :
+            classifi = "Suspeita";
+            alert(classifi);
             break;
-        case `N`: 
-            pontos = pontos + 0;
+        case 3 :
+        case 4 :
+            classifi = "Cúmplice";
+            alert(classifi);
             break;
+        case 5 : 
+            classifi = "Assassino";
+            alert(classifi);
+            break;
+        case 0 : 
+            classifi = "Inocente";
+            alert(classifi);
         default : 
-            alert(`Mensagem Iválida`);
+            alert(`Valor Inválido`);
             break;
     }
-    switch (local) {
-        case `S`:
-            pontos = pontos + 1;
-            break;
-        case `N`: 
-            pontos = pontos + 0;
-            break;
-        default : 
-            alert(`Mensagem Iválida`);
-            break;
-    }
-    switch (moraPerto) {
-        case `S`:
-            pontos = pontos + 1;
-            break;
-        case `N`: 
-            pontos = pontos + 0;
-            break;
-        default : 
-            alert(`Mensagem Iválida`);
-            break;
-    }
-    switch (pobreza) {
-        case `S`:
-            pontos = pontos + 1;
-            break;
-        case `N`: 
-            pontos = pontos + 0;
-            break;
-        default : 
-            alert(`Mensagem Iválida`);
-            break;
-    }
-    switch (colegunhas) {
-        case `S`:
-            pontos = pontos + 1;
-            break;
-        case `N`: 
-            pontos = pontos + 0;
-            break;
-        default : 
-            alert(`Mensagem Iválida`);
-            break;
-    }
+
+   
 
     //SAÍDA
 
